@@ -1,4 +1,4 @@
-package controller;
+package controller.itemController;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
@@ -7,7 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
-public class ItemFormController {
+public class ItemManagementFormController {
 
     @FXML
     private JFXButton btnAdd;
