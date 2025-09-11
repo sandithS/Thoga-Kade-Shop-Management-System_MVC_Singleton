@@ -1,14 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controller.CustomerDashboardFormController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="598.0" prefWidth="765.0" style="-fx-background-color: #6cd454;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerDashboardFormController">
+    <children>
+        <Label layoutX="-43.0" layoutY="177.0" prefHeight="352.0" prefWidth="343.0" style="-fx-background-color: #B8FFB8; -fx-background-radius: 30;" />
+        <JFXButton fx:id="btnCustomer" layoutX="127.0" layoutY="216.0" onAction="#btnCustomerOnAction" prefHeight="47.0" prefWidth="124.0" style="-fx-background-color: white; -fx-background-radius: 40; -fx-border-color: black; -fx-border-radius: 40;" text="Customer">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font></JFXButton>
+        <JFXButton fx:id="btnItem" layoutX="127.0" layoutY="290.0" onAction="#btnItemOnAction" prefHeight="47.0" prefWidth="124.0" style="-fx-background-color: white; -fx-background-radius: 40; -fx-border-color: black; -fx-border-radius: 40;" text="Item">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font></JFXButton>
+        <Label layoutX="241.0" layoutY="46.0" text="Thoga Kade" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="43.0" />
+            </font>
+        </Label>
+        <ImageView fitHeight="394.0" fitWidth="375.0" layoutX="325.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../images/pic1.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="92.0" fitWidth="87.0" layoutX="144.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../images/grocery.png" />
+            </image>
+        </ImageView>
+      <JFXButton fx:id="btnOrder" layoutX="129.0" layoutY="367.0" onAction="#btnOrderOnAction" prefHeight="47.0" prefWidth="124.0" style="-fx-background-color: white; -fx-background-radius: 40; -fx-border-color: black; -fx-border-radius: 40;" text="Order">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnOrderDetails" layoutX="129.0" layoutY="444.0" onAction="#btnOrderDetailsOnAction" prefHeight="47.0" prefWidth="124.0" style="-fx-background-color: white; -fx-background-radius: 40; -fx-border-color: black; -fx-border-radius: 40;" text="Order Details">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+    </children>
 </AnchorPane>
