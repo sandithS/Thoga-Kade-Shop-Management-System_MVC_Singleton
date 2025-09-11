@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import model.Customer;
 
 public class CustomerManagementFormController {
@@ -55,7 +56,7 @@ public class CustomerManagementFormController {
     private TableColumn<?, ?> colTitle;
 
     @FXML
-    private TableView<?> tblCustomer;
+    private TableView<Customer> tblCustomerDetails;
 
     @FXML
     private JFXTextField txtAddress;
@@ -110,6 +111,18 @@ public class CustomerManagementFormController {
 
     @FXML
     void btnLoadOnAction(ActionEvent event) {
+
+        colCustId.setCellValueFactory(new PropertyValueFactory<>("custID"));
+        colTitle.setCellValueFactory(new PropertyValueFactory<>("custTitle"));
+        colName.setCellValueFactory(new PropertyValueFactory<>("custName"));
+        colDob.setCellValueFactory(new PropertyValueFactory<>("dob"));
+        colSalary.setCellValueFactory(new PropertyValueFactory<>("salary"));
+        colAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
+        colCity.setCellValueFactory(new PropertyValueFactory<>("city"));
+        colProvince.setCellValueFactory(new PropertyValueFactory<>("province"));
+        colPostalCode.setCellValueFactory(new PropertyValueFactory<>("postalCode"));
+
+        tblCustomerDetails.setItems(customerManagementService.getAllCustomerDetails());
 
     }
 

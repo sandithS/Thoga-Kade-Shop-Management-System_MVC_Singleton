@@ -73,7 +73,7 @@
             <font>
                 <Font name="System Bold" size="14.0" />
             </font></JFXButton>
-        <TableView fx:id="tblCustomer" layoutX="51.0" layoutY="329.0" prefHeight="242.0" prefWidth="750.0">
+        <TableView fx:id="tblCustomerDetails" layoutX="51.0" layoutY="329.0" prefHeight="242.0" prefWidth="750.0">
             <columns>
                 <TableColumn fx:id="colCustId" prefWidth="84.80001068115234" text="Customer ID" />
                 <TableColumn fx:id="colTitle" prefWidth="61.60003662109375" text="Title" />
