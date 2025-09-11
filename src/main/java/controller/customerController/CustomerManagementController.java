@@ -75,12 +75,25 @@ public class CustomerManagementController implements CustomerManagementService{
     }
 
     @Override
-    public void updateCustomerDetails() {
+    public void updateCustomerDetails(Customer customer) {
 
     }
 
     @Override
-    public void deleteCustomerDetails() {
+    public void deleteCustomerDetails(String custId) {
 
+        try {
+
+            boolean response = DBConnection.getInstance().getConnection().createStatement().executeUpdate("DELETE FROM Customer WHERE custID='"+custId+"'")>0;
+
+            if (response){
+                JOptionPane.showMessageDialog(null,"Deleted..");
+            }else{
+                JOptionPane.showMessageDialog(null,"Delete Fail..");
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

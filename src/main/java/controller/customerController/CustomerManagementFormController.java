@@ -107,6 +107,8 @@ public class CustomerManagementFormController {
     @FXML
     void btnDeleteOnAction(ActionEvent event) {
 
+        customerManagementService.deleteCustomerDetails(txtCustId.getText());
+
     }
 
     @FXML

@@ -9,8 +9,8 @@ public interface CustomerManagementService {
 
     ObservableList<Customer> getAllCustomerDetails();
 
-    void updateCustomerDetails();
+    void updateCustomerDetails(Customer customer);
 
-    void deleteCustomerDetails();
+    void deleteCustomerDetails(String custId);
 
 }
