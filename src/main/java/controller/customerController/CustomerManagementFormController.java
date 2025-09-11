@@ -136,6 +136,19 @@ public class CustomerManagementFormController {
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
 
+        Customer customer = new Customer(
+                txtCustId.getText(),
+                txtTitle.getText(),
+                txtName.getText(),
+                txtDob.getText(),
+                Double.parseDouble(txtSalary.getText()),
+                txtAddress.getText(),
+                txtCity.getText(),
+                txtProvince.getText(),
+                txtPostalCode.getText()
+        );
+
+        customerManagementService.updateCustomerDetails(customer);
     }
 
 }

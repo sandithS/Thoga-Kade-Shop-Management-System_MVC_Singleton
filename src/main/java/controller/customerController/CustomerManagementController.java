@@ -77,6 +77,32 @@ public class CustomerManagementController implements CustomerManagementService{
     @Override
     public void updateCustomerDetails(Customer customer) {
 
+        try {
+            Connection connection = DBConnection.getInstance().getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE Customer SET CustTitle=?, CustName=?, dob=?, salary=?, CustAddress=?, city=?, province=?, postalCode=? WHERE custID=?");
+
+            preparedStatement.setObject(1,customer.getCustTitle());
+            preparedStatement.setObject(2,customer.getCustName());
+            preparedStatement.setObject(3,customer.getDob());
+            preparedStatement.setObject(4,customer.getSalary());
+            preparedStatement.setObject(5,customer.getAddress());
+            preparedStatement.setObject(6,customer.getCity());
+            preparedStatement.setObject(7,customer.getProvince());
+            preparedStatement.setObject(8,customer.getPostalCode());
+            preparedStatement.setObject(9,customer.getCustID());
+
+            boolean response = preparedStatement.executeUpdate()>0;
+
+            if (response){
+                JOptionPane.showMessageDialog(null,"Updated...");
+            }else{
+                JOptionPane.showMessageDialog(null,"Update Failed...");
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
     @Override
