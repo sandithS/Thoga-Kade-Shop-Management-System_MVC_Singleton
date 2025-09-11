@@ -31,13 +31,7 @@ public class CustomerManagementController implements CustomerManagementService{
             preparedStatement.setObject(8,customer.getProvince());
             preparedStatement.setObject(9,customer.getPostalCode());
 
-            boolean response = preparedStatement.executeUpdate()>0;
-
-            if (response){
-                JOptionPane.showMessageDialog(null,"Added Success...");
-            }else {
-                JOptionPane.showMessageDialog(null,"Added Failed...");
-            }
+            preparedStatement.executeUpdate();
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -91,13 +85,7 @@ public class CustomerManagementController implements CustomerManagementService{
             preparedStatement.setObject(8,customer.getPostalCode());
             preparedStatement.setObject(9,customer.getCustID());
 
-            boolean response = preparedStatement.executeUpdate()>0;
-
-            if (response){
-                JOptionPane.showMessageDialog(null,"Updated...");
-            }else{
-                JOptionPane.showMessageDialog(null,"Update Failed...");
-            }
+            preparedStatement.executeUpdate();
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -110,13 +98,7 @@ public class CustomerManagementController implements CustomerManagementService{
 
         try {
 
-            boolean response = DBConnection.getInstance().getConnection().createStatement().executeUpdate("DELETE FROM Customer WHERE custID='"+custId+"'")>0;
-
-            if (response){
-                JOptionPane.showMessageDialog(null,"Deleted..");
-            }else{
-                JOptionPane.showMessageDialog(null,"Delete Fail..");
-            }
+            DBConnection.getInstance().getConnection().createStatement().executeUpdate("DELETE FROM Customer WHERE custID='"+custId+"'");
 
         } catch (SQLException e) {
             throw new RuntimeException(e);

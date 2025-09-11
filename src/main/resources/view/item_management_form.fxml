@@ -10,7 +10,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="677.0" prefWidth="852.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.itemController.ItemManagementFormController">
     <children>
         <Label layoutY="-2.0" prefHeight="86.0" prefWidth="852.0" style="-fx-background-color: #6cd454;" text="                                 Item Form" textFill="WHITE">
@@ -43,7 +42,7 @@
                 <Font size="13.0" />
             </font>
         </JFXTextField>
-        <JFXButton fx:id="btnAdd" layoutX="163.0" layoutY="595.0" onAction="#btnAddOnAction" prefHeight="41.0" prefWidth="77.0" style="-fx-background-color: #04AA6D; -fx-background-radius: 20;" text="Add" textFill="WHITE">
+        <JFXButton fx:id="btnAdd" layoutX="77.0" layoutY="128.0" onAction="#btnAddOnAction" prefHeight="41.0" prefWidth="77.0" style="-fx-background-color: #04AA6D; -fx-background-radius: 20;" text="Add" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font>
@@ -58,12 +57,7 @@
                 <Font name="System Bold" size="14.0" />
             </font>
         </JFXButton>
-        <JFXButton fx:id="btnSearch" layoutX="71.0" layoutY="127.0" onAction="#btnSearchOnAction" prefHeight="41.0" prefWidth="77.0" style="-fx-background-color: #008CBA; -fx-background-radius: 20;" text="Search" textFill="WHITE">
-            <font>
-                <Font name="System Bold" size="14.0" />
-            </font>
-        </JFXButton>
-        <TableView fx:id="tblItem" layoutX="111.0" layoutY="290.0" prefHeight="242.0" prefWidth="634.0">
+        <TableView fx:id="tblItemDetails" layoutX="111.0" layoutY="290.0" prefHeight="242.0" prefWidth="634.0">
             <columns>
                 <TableColumn fx:id="colItemCode" prefWidth="106.39999389648438" text="Item Code" />
                 <TableColumn fx:id="colDescription" prefWidth="152.800048828125" text="Description" />
@@ -72,7 +66,7 @@
                 <TableColumn fx:id="colQtyOnHand" prefWidth="141.5999755859375" text="Qty On Hand" />
             </columns>
         </TableView>
-        <JFXButton fx:id="btnLoad" layoutX="661.0" layoutY="597.0" onAction="#btnLoadOnAction" prefHeight="41.0" prefWidth="77.0" style="-fx-background-color: #555555; -fx-background-radius: 20;" text="Load" textFill="WHITE">
+        <JFXButton fx:id="btnClear" layoutX="661.0" layoutY="597.0" onAction="#btnClearOnAction" prefHeight="41.0" prefWidth="77.0" style="-fx-background-color: #555555; -fx-background-radius: 20;" text="Clear" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font>

@@ -53,7 +53,7 @@
             <font>
                 <Font size="13.0" />
             </font></JFXTextField>
-        <JFXButton fx:id="btnAdd" layoutX="182.0" layoutY="602.0" onAction="#btnAddOnAction" prefHeight="41.0" prefWidth="77.0" style="-fx-background-color: #04AA6D; -fx-background-radius: 20;" text="Add" textFill="WHITE">
+        <JFXButton fx:id="btnAdd" layoutX="68.0" layoutY="127.0" onAction="#btnAddOnAction" prefHeight="41.0" prefWidth="77.0" style="-fx-background-color: #04AA6D; -fx-background-radius: 20;" text="Add" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font></JFXButton>
@@ -65,11 +65,7 @@
             <font>
                 <Font name="System Bold" size="14.0" />
             </font></JFXButton>
-        <JFXButton fx:id="btnSearch" layoutX="63.0" layoutY="132.0" onAction="#btnSearchOnAction" prefHeight="41.0" prefWidth="77.0" style="-fx-background-color: #008CBA; -fx-background-radius: 20;" text="Search" textFill="WHITE">
-            <font>
-                <Font name="System Bold" size="14.0" />
-            </font></JFXButton>
-        <JFXButton fx:id="btnLoad" layoutX="723.0" layoutY="603.0" onAction="#btnLoadOnAction" prefHeight="41.0" prefWidth="77.0" style="-fx-background-color: #555555; -fx-background-radius: 20;" text="Load" textFill="WHITE">
+        <JFXButton fx:id="btnClear" layoutX="723.0" layoutY="603.0" onAction="#btnClearOnAction" prefHeight="41.0" prefWidth="77.0" style="-fx-background-color: #555555; -fx-background-radius: 20;" text="Clear" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font></JFXButton>
