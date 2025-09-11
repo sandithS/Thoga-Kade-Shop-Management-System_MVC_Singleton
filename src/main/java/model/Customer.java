@@ -15,7 +15,7 @@ public class Customer {
     private String custID;
     private String custTitle;
     private String custName;
-    private LocalDate dob;
+    private String dob;
     private double salary;
     private String address;
     private String city;

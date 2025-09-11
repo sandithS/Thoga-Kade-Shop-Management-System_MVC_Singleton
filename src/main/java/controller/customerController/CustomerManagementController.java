@@ -1,4 +1,11 @@
 package controller.customerController;
 
-public class CustomerManagementController {
+import model.Customer;
+
+public class CustomerManagementController implements CustomerManagementService{
+
+    @Override
+    public void addCustomerDetails(Customer customer) {
+
+    }
 }

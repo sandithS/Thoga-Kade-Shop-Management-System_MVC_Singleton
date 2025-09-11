@@ -6,8 +6,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import model.Customer;
 
 public class CustomerManagementFormController {
+
+    CustomerManagementService customerManagementService = new CustomerManagementController();
 
     @FXML
     private JFXButton btnAdd;
@@ -83,6 +86,20 @@ public class CustomerManagementFormController {
 
     @FXML
     void btnAddOnAction(ActionEvent event) {
+
+        Customer customer = new Customer(
+                txtCustId.getText(),
+                txtTitle.getText(),
+                txtName.getText(),
+                txtDob.getText(),
+                Double.parseDouble(txtSalary.getText()),
+                txtAddress.getText(),
+                txtCity.getText(),
+                txtProvince.getText(),
+                txtPostalCode.getText()
+        );
+
+        customerManagementService.addCustomerDetails(customer);
 
     }
 
