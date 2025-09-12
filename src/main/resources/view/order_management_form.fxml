@@ -17,22 +17,22 @@
                 <Font name="System Bold" size="40.0" />
             </font>
         </Label>
-        <JFXTextField fx:id="txtOrderId" layoutX="261.0" layoutY="132.0" prefHeight="30.0" prefWidth="170.0" promptText="Order ID" style="-fx-background-color: #B8FFB8;">
+        <JFXTextField fx:id="txtOrderId" layoutX="296.0" layoutY="132.0" prefHeight="30.0" prefWidth="170.0" promptText="Order ID" style="-fx-background-color: #B8FFB8;">
             <font>
                 <Font size="13.0" />
             </font>
         </JFXTextField>
-        <JFXTextField fx:id="txtOrderDate" layoutX="473.0" layoutY="132.0" prefHeight="30.0" prefWidth="170.0" promptText="Order Date" style="-fx-background-color: #B8FFB8;">
+        <JFXTextField fx:id="txtOrderDate" layoutX="508.0" layoutY="132.0" prefHeight="30.0" prefWidth="170.0" promptText="Order Date" style="-fx-background-color: #B8FFB8;">
             <font>
                 <Font size="13.0" />
             </font>
         </JFXTextField>
-        <JFXTextField fx:id="txtCustId" layoutX="260.0" layoutY="195.0" prefHeight="30.0" prefWidth="170.0" promptText="Cust ID" style="-fx-background-color: #B8FFB8;">
+        <JFXTextField fx:id="txtCustId" layoutX="295.0" layoutY="195.0" prefHeight="30.0" prefWidth="170.0" promptText="Cust ID" style="-fx-background-color: #B8FFB8;">
             <font>
                 <Font size="13.0" />
             </font>
         </JFXTextField>
-        <JFXButton fx:id="btnPlaceOrder" layoutX="72.0" layoutY="129.0" onAction="#btnPlaceOrderOnAction" prefHeight="42.0" prefWidth="110.0" style="-fx-background-color: #04AA6D; -fx-background-radius: 20;" text="Place Order" textFill="WHITE">
+        <JFXButton fx:id="btnPlaceOrder" layoutX="121.0" layoutY="132.0" onAction="#btnPlaceOrderOnAction" prefHeight="42.0" prefWidth="110.0" style="-fx-background-color: #04AA6D; -fx-background-radius: 20;" text="Place Order" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font>
@@ -54,7 +54,7 @@
                 <TableColumn fx:id="colCustID" prefWidth="204.79996337890623" text="Cust ID" />
             </columns>
         </TableView>
-        <JFXButton fx:id="btnClear" layoutX="661.0" layoutY="597.0" onAction="#btnClearOnAction" prefHeight="41.0" prefWidth="77.0" style="-fx-background-color: #555555; -fx-background-radius: 20;" text="Clear" textFill="WHITE">
+        <JFXButton fx:id="btnClear" layoutX="652.0" layoutY="597.0" onAction="#btnClearOnAction" prefHeight="41.0" prefWidth="77.0" style="-fx-background-color: #555555; -fx-background-radius: 20;" text="Clear" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font>
