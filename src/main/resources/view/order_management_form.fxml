@@ -27,7 +27,7 @@
                 <Font size="13.0" />
             </font>
         </JFXTextField>
-        <JFXTextField fx:id="txtCustId" layoutX="260.0" layoutY="202.0" prefHeight="30.0" prefWidth="170.0" promptText="Cust ID" style="-fx-background-color: #B8FFB8;">
+        <JFXTextField fx:id="txtCustId" layoutX="260.0" layoutY="195.0" prefHeight="30.0" prefWidth="170.0" promptText="Cust ID" style="-fx-background-color: #B8FFB8;">
             <font>
                 <Font size="13.0" />
             </font>
@@ -47,7 +47,7 @@
                 <Font name="System Bold" size="14.0" />
             </font>
         </JFXButton>
-        <TableView fx:id="tblOrderDetails" layoutX="111.0" layoutY="290.0" prefHeight="242.0" prefWidth="634.0">
+        <TableView fx:id="tblOrderDetails" layoutX="111.0" layoutY="260.0" prefHeight="301.0" prefWidth="634.0">
             <columns>
                 <TableColumn fx:id="colOrderID" prefWidth="193.5999984741211" text="Order ID" />
                 <TableColumn fx:id="colOrderDate" prefWidth="234.40005493164062" text="Order Date" />
