@@ -10,58 +10,73 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="677.0" prefWidth="852.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.orderController.OrderManagementFormController">
+<AnchorPane prefHeight="677.0" prefWidth="852.0" style="-fx-background-color: white;"
+            xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.orderController.OrderManagementFormController">
     <children>
-        <Label layoutY="-2.0" prefHeight="86.0" prefWidth="852.0" style="-fx-background-color: #6cd454;" text="                                Order Form" textFill="WHITE">
+        <Label layoutY="-2.0" prefHeight="86.0" prefWidth="852.0" style="-fx-background-color: #6cd454;"
+               text="                                Order Form" textFill="WHITE">
             <font>
-                <Font name="System Bold" size="40.0" />
+                <Font name="System Bold" size="40.0"/>
             </font>
         </Label>
-        <JFXTextField fx:id="txtOrderId" layoutX="296.0" layoutY="132.0" prefHeight="30.0" prefWidth="170.0" promptText="Order ID" style="-fx-background-color: #B8FFB8;">
+        <JFXTextField fx:id="txtOrderId" layoutX="296.0" layoutY="132.0" prefHeight="30.0" prefWidth="170.0"
+                      promptText="Order ID" style="-fx-background-color: #B8FFB8;">
             <font>
-                <Font size="13.0" />
+                <Font size="13.0"/>
             </font>
         </JFXTextField>
-        <JFXTextField fx:id="txtOrderDate" layoutX="508.0" layoutY="132.0" prefHeight="30.0" prefWidth="170.0" promptText="Order Date" style="-fx-background-color: #B8FFB8;">
+        <JFXTextField fx:id="txtOrderDate" layoutX="508.0" layoutY="132.0" prefHeight="30.0" prefWidth="170.0"
+                      promptText="Order Date" style="-fx-background-color: #B8FFB8;">
             <font>
-                <Font size="13.0" />
+                <Font size="13.0"/>
             </font>
         </JFXTextField>
-        <JFXTextField fx:id="txtCustId" layoutX="295.0" layoutY="195.0" prefHeight="30.0" prefWidth="170.0" promptText="Cust ID" style="-fx-background-color: #B8FFB8;">
+        <JFXTextField fx:id="txtCustId" layoutX="295.0" layoutY="195.0" prefHeight="30.0" prefWidth="170.0"
+                      promptText="Cust ID" style="-fx-background-color: #B8FFB8;">
             <font>
-                <Font size="13.0" />
+                <Font size="13.0"/>
             </font>
         </JFXTextField>
-        <JFXButton fx:id="btnPlaceOrder" layoutX="121.0" layoutY="132.0" onAction="#btnPlaceOrderOnAction" prefHeight="42.0" prefWidth="110.0" style="-fx-background-color: #04AA6D; -fx-background-radius: 20;" text="Place Order" textFill="WHITE">
+        <JFXButton fx:id="btnPlaceOrder" layoutX="121.0" layoutY="132.0" onAction="#btnPlaceOrderOnAction"
+                   prefHeight="42.0" prefWidth="110.0" style="-fx-background-color: #04AA6D; -fx-background-radius: 20;"
+                   text="Place Order" textFill="WHITE">
             <font>
-                <Font name="System Bold" size="14.0" />
+                <Font name="System Bold" size="14.0"/>
             </font>
         </JFXButton>
-        <JFXButton fx:id="btnUpdate" layoutX="265.0" layoutY="595.0" onAction="#btnUpdateOnAction" prefHeight="41.0" prefWidth="77.0" style="-fx-background-color: #FFAE42; -fx-background-radius: 20;" text="Update" textFill="WHITE">
+        <JFXButton fx:id="btnUpdate" layoutX="265.0" layoutY="595.0" onAction="#btnUpdateOnAction" prefHeight="41.0"
+                   prefWidth="77.0" style="-fx-background-color: #FFAE42; -fx-background-radius: 20;" text="Update"
+                   textFill="WHITE">
             <font>
-                <Font name="System Bold" size="14.0" />
+                <Font name="System Bold" size="14.0"/>
             </font>
         </JFXButton>
-        <JFXButton fx:id="btnDelete" layoutX="363.0" layoutY="597.0" onAction="#btnDeleteOnAction" prefHeight="41.0" prefWidth="77.0" style="-fx-background-color: #f44336; -fx-background-radius: 20;" text="Delete" textFill="WHITE">
+        <JFXButton fx:id="btnDelete" layoutX="363.0" layoutY="597.0" onAction="#btnDeleteOnAction" prefHeight="41.0"
+                   prefWidth="77.0" style="-fx-background-color: #f44336; -fx-background-radius: 20;" text="Delete"
+                   textFill="WHITE">
             <font>
-                <Font name="System Bold" size="14.0" />
+                <Font name="System Bold" size="14.0"/>
             </font>
         </JFXButton>
         <TableView fx:id="tblOrderDetails" layoutX="111.0" layoutY="260.0" prefHeight="301.0" prefWidth="634.0">
             <columns>
-                <TableColumn fx:id="colOrderID" prefWidth="193.5999984741211" text="Order ID" />
-                <TableColumn fx:id="colOrderDate" prefWidth="234.40005493164062" text="Order Date" />
-                <TableColumn fx:id="colCustID" prefWidth="204.79996337890623" text="Cust ID" />
+                <TableColumn fx:id="colOrderID" prefWidth="193.5999984741211" text="Order ID"/>
+                <TableColumn fx:id="colOrderDate" prefWidth="234.40005493164062" text="Order Date"/>
+                <TableColumn fx:id="colCustID" prefWidth="204.79996337890623" text="Cust ID"/>
             </columns>
         </TableView>
-        <JFXButton fx:id="btnClear" layoutX="652.0" layoutY="597.0" onAction="#btnClearOnAction" prefHeight="41.0" prefWidth="77.0" style="-fx-background-color: #555555; -fx-background-radius: 20;" text="Clear" textFill="WHITE">
+        <JFXButton fx:id="btnClear" layoutX="652.0" layoutY="597.0" onAction="#btnClearOnAction" prefHeight="41.0"
+                   prefWidth="77.0" style="-fx-background-color: #555555; -fx-background-radius: 20;" text="Clear"
+                   textFill="WHITE">
             <font>
-                <Font name="System Bold" size="14.0" />
+                <Font name="System Bold" size="14.0"/>
             </font>
         </JFXButton>
-        <ImageView fitHeight="86.0" fitWidth="78.0" layoutX="275.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="86.0" fitWidth="78.0" layoutX="275.0" layoutY="7.0" pickOnBounds="true"
+                   preserveRatio="true">
             <image>
-                <Image url="@../images/booking.png" />
+                <Image url="@../images/booking.png"/>
             </image>
         </ImageView>
     </children>

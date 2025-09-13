@@ -9,6 +9,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.OrderDetails;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -63,7 +64,7 @@ public class OrderDetailsManagementFormController implements Initializable {
     @FXML
     void btnDeleteOnAction(ActionEvent event) {
 
-        orderDetailsManagementService.deleteOrderDetails(txtOrderId.getText(),txtItemCode.getText());
+        orderDetailsManagementService.deleteOrderDetails(txtOrderId.getText(), txtItemCode.getText());
 
         loadTable();
     }
