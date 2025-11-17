@@ -1,18 +1,17 @@
-package controller.orderController;
+package repository.impl;
 
 import db.DBConnection;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import model.Order;
+import model.dto.Order;
+import repository.OrderRepository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class OrderManagementController implements OrderManagementService {
+public class OrderRepositoryImpl implements OrderRepository {
     @Override
-    public void placeOrders(Order order) {
+    public boolean placeOrder(Order order) {
         try {
             Connection connection = DBConnection.getInstance().getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO Orders VALUES(?,?,?)");
@@ -21,7 +20,7 @@ public class OrderManagementController implements OrderManagementService {
             preparedStatement.setObject(2, order.getOrderDate());
             preparedStatement.setObject(3, order.getCustID());
 
-            preparedStatement.executeUpdate();
+            return preparedStatement.executeUpdate()>0;
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -29,31 +28,19 @@ public class OrderManagementController implements OrderManagementService {
     }
 
     @Override
-    public ObservableList<Order> getAllOrders() {
-
-        ObservableList<Order> orderList = FXCollections.observableArrayList();
-
+    public ResultSet getAllOrders() {
         try {
             Connection connection = DBConnection.getInstance().getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM Orders");
-            ResultSet resultSet = preparedStatement.executeQuery();
+            return preparedStatement.executeQuery();
 
-            while (resultSet.next()) {
-                Order order = new Order(
-                        resultSet.getString("OrderID"),
-                        resultSet.getString("OrderDate"),
-                        resultSet.getString("CustID")
-                );
-                orderList.add(order);
-            }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return orderList;
     }
 
     @Override
-    public void updateOrders(Order order) {
+    public void updateOrder(Order order) {
         try {
             Connection connection = DBConnection.getInstance().getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement("UPDATE Orders SET OrderDate=?, CustID=? WHERE OrderID=?");
@@ -70,7 +57,7 @@ public class OrderManagementController implements OrderManagementService {
     }
 
     @Override
-    public void deleteOrders(String orderID) {
+    public void deleteOrder(String orderID) {
         try {
 
             DBConnection.getInstance().getConnection().createStatement().executeUpdate("DELETE FROM Orders WHERE OrderID='" + orderID + "'");

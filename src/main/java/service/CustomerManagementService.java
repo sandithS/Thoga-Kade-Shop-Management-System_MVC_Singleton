@@ -1,7 +1,7 @@
-package controller.customerController;
+package service;
 
 import javafx.collections.ObservableList;
-import model.Customer;
+import model.dto.Customer;
 
 public interface CustomerManagementService {
 
@@ -12,5 +12,7 @@ public interface CustomerManagementService {
     void updateCustomerDetails(Customer customer);
 
     void deleteCustomerDetails(String custId);
+
+    Customer searchCustomer(String custId);
 
 }

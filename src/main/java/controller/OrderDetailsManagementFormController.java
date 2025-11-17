@@ -1,4 +1,4 @@
-package controller.orderDetailsController;
+package controller;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
@@ -8,14 +8,16 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import model.OrderDetails;
+import model.dto.OrderDetails;
+import service.impl.OrderDetailsManagementServiceImpl;
+import service.OrderDetailsManagementService;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class OrderDetailsManagementFormController implements Initializable {
 
-    OrderDetailsManagementService orderDetailsManagementService = new OrderDetailsManagementController();
+    OrderDetailsManagementService orderDetailsManagementService = new OrderDetailsManagementServiceImpl();
 
     @FXML
     private JFXButton btnClear;

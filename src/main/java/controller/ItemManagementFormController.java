@@ -1,4 +1,4 @@
-package controller.itemController;
+package controller;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
@@ -8,14 +8,16 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import model.Item;
+import model.dto.Item;
+import service.impl.ItemManagementServiceImpl;
+import service.ItemManagementService;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ItemManagementFormController implements Initializable {
 
-    ItemManagementService itemManagementService = new ItemManagementController();
+    ItemManagementService itemManagementService = new ItemManagementServiceImpl();
 
     @FXML
     private JFXButton btnAdd;

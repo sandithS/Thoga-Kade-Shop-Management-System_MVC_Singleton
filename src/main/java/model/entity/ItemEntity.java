@@ -1,5 +1,7 @@
-package model;
+package model.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.*;
 
 @AllArgsConstructor
@@ -7,13 +9,13 @@ import lombok.*;
 @Getter
 @Setter
 @ToString
+@Entity
+public class ItemEntity {
 
-public class Item {
-
+    @Id
     private String itemCode;
     private String description;
     private String packSize;
     private Double unitPrice;
     private Integer qtyOnHand;
-
 }

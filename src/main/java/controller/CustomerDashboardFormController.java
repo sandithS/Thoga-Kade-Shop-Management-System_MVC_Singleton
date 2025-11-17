@@ -23,6 +23,9 @@ public class CustomerDashboardFormController {
     @FXML
     private JFXButton btnOrderDetails;
 
+    @FXML
+    private JFXButton btnPlaceOrder;
+
     Stage stage = new Stage();
 
     @FXML
@@ -59,6 +62,16 @@ public class CustomerDashboardFormController {
     void btnOrderOnAction(ActionEvent event) {
         try {
             stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/order_management_form.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        stage.show();
+    }
+
+    @FXML
+    void btnPlaceOrderOnAction(ActionEvent event) {
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/place_order_form.fxml"))));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

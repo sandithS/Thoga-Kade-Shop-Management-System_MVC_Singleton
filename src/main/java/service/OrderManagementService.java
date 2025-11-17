@@ -1,11 +1,11 @@
-package controller.orderController;
+package service;
 
 import javafx.collections.ObservableList;
-import model.Order;
+import model.dto.Order;
 
 public interface OrderManagementService {
 
-    void placeOrders(Order order);
+    boolean placeOrders(Order order);
 
     ObservableList<Order> getAllOrders();
 

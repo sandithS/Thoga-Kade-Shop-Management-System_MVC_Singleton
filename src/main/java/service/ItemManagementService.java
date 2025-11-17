@@ -1,7 +1,8 @@
-package controller.itemController;
+package service;
 
 import javafx.collections.ObservableList;
-import model.Item;
+import model.dto.CartItem;
+import model.dto.Item;
 
 public interface ItemManagementService {
 
@@ -13,4 +14,7 @@ public interface ItemManagementService {
 
     void deleteItemDetails(String itemCode);
 
+    Item searchItem(String itemCode, String description);
+
+    boolean updateItemQuantity(ObservableList<CartItem> cartItemObservableList);
 }

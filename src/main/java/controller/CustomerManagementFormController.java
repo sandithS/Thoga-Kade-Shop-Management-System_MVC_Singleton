@@ -1,4 +1,4 @@
-package controller.customerController;
+package controller;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
@@ -8,14 +8,16 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import model.Customer;
+import model.dto.Customer;
+import service.impl.CustomerManagementServiceImpl;
+import service.CustomerManagementService;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class CustomerManagementFormController implements Initializable {
 
-    CustomerManagementService customerManagementService = new CustomerManagementController();
+    CustomerManagementService customerManagementService = new CustomerManagementServiceImpl();
 
     @FXML
     private JFXButton btnAdd;

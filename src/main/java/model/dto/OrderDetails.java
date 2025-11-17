@@ -1,4 +1,4 @@
-package model;
+package model.dto;
 
 import lombok.*;
 
@@ -13,6 +13,6 @@ public class OrderDetails {
     private String OrderID;
     private String ItemCode;
     private Integer OrderQTY;
-    private Integer Discount;
+    private double Discount;
 
 }

@@ -1,43 +1,29 @@
-package controller.orderDetailsController;
+package repository.impl;
 
 import db.DBConnection;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import model.OrderDetails;
+import model.dto.OrderDetails;
+import repository.OrderDetailsRepository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class OrderDetailsManagementController implements OrderDetailsManagementService {
+public class OrderDetailsRepositoryImpl implements OrderDetailsRepository {
     @Override
-    public ObservableList<OrderDetails> getAllOrderDetails() {
-
-        ObservableList<OrderDetails> orderDetailsList = FXCollections.observableArrayList();
-
+    public ResultSet getAllOrderDetails() {
         try {
             Connection connection = DBConnection.getInstance().getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM OrderDetail");
-            ResultSet resultSet = preparedStatement.executeQuery();
+            return preparedStatement.executeQuery();
 
-            while (resultSet.next()) {
-                OrderDetails orderDetail = new OrderDetails(
-                        resultSet.getString("OrderID"),
-                        resultSet.getString("ItemCode"),
-                        resultSet.getInt("OrderQTY"),
-                        resultSet.getInt("Discount")
-                );
-                orderDetailsList.add(orderDetail);
-            }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return orderDetailsList;
     }
 
     @Override
-    public void updateOrderDetails(OrderDetails orderDetail) {
+    public void updateOrderDetail(OrderDetails orderDetail) {
         try {
             Connection connection = DBConnection.getInstance().getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement("UPDATE OrderDetail SET OrderQTY=?, Discount=? WHERE OrderID=? AND ItemCode=?");
@@ -55,7 +41,7 @@ public class OrderDetailsManagementController implements OrderDetailsManagementS
     }
 
     @Override
-    public void deleteOrderDetails(String orderId, String itemCode) {
+    public void deleteOrderDetail(String orderId, String itemCode) {
         try {
 
             DBConnection.getInstance().getConnection().createStatement().executeUpdate("DELETE FROM OrderDetail WHERE OrderID='" + orderId + "' AND ItemCode='" + itemCode + "'");
@@ -65,4 +51,21 @@ public class OrderDetailsManagementController implements OrderDetailsManagementS
         }
     }
 
+    @Override
+    public boolean addOrderDetails(OrderDetails orderDetails) {
+        try {
+            Connection connection = DBConnection.getInstance().getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO OrderDetail VALUES(?,?,?,?)");
+
+            preparedStatement.setObject(1, orderDetails.getOrderID());
+            preparedStatement.setObject(2, orderDetails.getItemCode());
+            preparedStatement.setObject(3, orderDetails.getOrderQTY());
+            preparedStatement.setObject(4, orderDetails.getDiscount());
+
+            return preparedStatement.executeUpdate()>0;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

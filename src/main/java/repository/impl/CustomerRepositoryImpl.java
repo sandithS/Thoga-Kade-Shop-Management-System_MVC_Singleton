@@ -1,20 +1,17 @@
-package controller.customerController;
+package repository.impl;
 
 import db.DBConnection;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import model.Customer;
+import model.dto.Customer;
+import repository.CustomerRepository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class CustomerManagementController implements CustomerManagementService {
-
+public class CustomerRepositoryImpl implements CustomerRepository {
     @Override
-    public void addCustomerDetails(Customer customer) {
-
+    public void addCustomer(Customer customer) {
         try {
             Connection connection = DBConnection.getInstance().getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO Customer VALUES(?,?,?,?,?,?,?,?,?)");
@@ -37,38 +34,33 @@ public class CustomerManagementController implements CustomerManagementService {
     }
 
     @Override
-    public ObservableList<Customer> getAllCustomerDetails() {
-
-        ObservableList<Customer> customerList = FXCollections.observableArrayList();
-
+    public ResultSet getAllCustomers() {
         try {
             Connection connection = DBConnection.getInstance().getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM Customer");
-            ResultSet resultSet = preparedStatement.executeQuery();
+            return preparedStatement.executeQuery();
 
-            while (resultSet.next()) {
-                Customer customer = new Customer(
-                        resultSet.getString("CustID"),
-                        resultSet.getString("CustTitle"),
-                        resultSet.getString("CustName"),
-                        resultSet.getString("DOB"),
-                        resultSet.getDouble("Salary"),
-                        resultSet.getString("CustAddress"),
-                        resultSet.getString("City"),
-                        resultSet.getString("Province"),
-                        resultSet.getString("PostalCode")
-                );
-                customerList.add(customer);
-            }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return customerList;
     }
 
     @Override
-    public void updateCustomerDetails(Customer customer) {
+    public ResultSet searchCustomer(String custId) {
+        try {
+            Connection connection = DBConnection.getInstance().getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM Customer WHERE custID = ? ");
+            preparedStatement.setObject(1,custId);
+            ResultSet resultSet = preparedStatement.executeQuery();
 
+            return resultSet;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void updateCustomer(Customer customer) {
         try {
             Connection connection = DBConnection.getInstance().getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement("UPDATE Customer SET CustTitle=?, CustName=?, dob=?, salary=?, CustAddress=?, city=?, province=?, postalCode=? WHERE custID=?");
@@ -88,12 +80,10 @@ public class CustomerManagementController implements CustomerManagementService {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
     }
 
     @Override
-    public void deleteCustomerDetails(String custId) {
-
+    public void deleteCustomer(String custId) {
         try {
 
             DBConnection.getInstance().getConnection().createStatement().executeUpdate("DELETE FROM Customer WHERE custID='" + custId + "'");
