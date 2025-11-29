@@ -39,9 +39,9 @@ The **Thoga Kade Shop Management System** is a Java-based application developed 
 ## Technologies Used
 
 - Java SE
-- JavaFX / Swing (for GUI)
-- MySQL / SQLite (for database)
-- Maven / Gradle (for dependency management)
+- JavaFX (for GUI)
+- MySQL (for database)
+- Maven (for dependency management)
 - Design Patterns: Singleton, MVC
 
 ---
